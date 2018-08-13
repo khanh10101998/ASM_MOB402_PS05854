@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Login screen-->
+    <dimen name="login_height_edt">50dp</dimen>
+    <dimen name="login_width_edt">300dp</dimen>
+    <dimen name="login_marginTop_edt">10dp</dimen>
+</resources>

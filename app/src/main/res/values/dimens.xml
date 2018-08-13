@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_height_icon">60dp</dimen>
+    <dimen name="login_width_icon">60dp</dimen>
+    <dimen name="login_marginRight_icon">10dp</dimen>
+    <dimen name="login_marginLeft_icon">10dp</dimen>
+    <dimen name="login_marginLeft_txt_register">10dp</dimen>
+    <dimen name="login_marginBottom_edt">10dp</dimen>
+    <dimen name="login_width_logo">150dp</dimen>
+    <dimen name="login_height_logo">150dp</dimen>
+</resources>

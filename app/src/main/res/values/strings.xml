@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MOB402_ASM_PS05854</string>
+
+    <!--LOGIN-->
+    <string name="userName">User name</string>
+    <string name="password">Password</string>
+    <string name="forgotPassword">Forgot password ?</string>
+    <string name="login">LOGIN</string>
+    <string name="or">OR</string>
+    <string name="doNotHave">Do not have an account ?</string>
+    <string name="register"><u>Register</u></string>
+    <!--End LOGIN-->
+    <string name="facebook_app_id">263845017542679</string>
+    <string name="fb_login_protocol_scheme">fb263845017542679</string>
+
+</resources>
