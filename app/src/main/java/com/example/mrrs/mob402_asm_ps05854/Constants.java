@@ -31,8 +31,13 @@ public class Constants {
     public static final String TAG_SUCCESS = "success";
     public static final String TAG_PRODUCTS = "products";
     public static final String TAG_PRODUCT = "product";
-    public static final String TAG_PID = "pid";
-    public static final String TAG_NAME = "name";
-    public static final String TAG_PRICE = "price";
+
+    public static final String TAG_PID = "idProduct";
+    public static final String TAG_UID = "idUser";
+    public static final String TAG_NAME = "nameProduct";
+    public static final String TAG_PRICE = "priceProduct";
     public static final String TAG_DESCRIPTION = "description";
+    public static final String TAG_image = "imageProduct";
+
+
 }

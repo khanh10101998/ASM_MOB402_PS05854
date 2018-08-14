@@ -5,16 +5,15 @@ public class Product {
     private String idUser;
     private String nameProduct;
     private String priceProduct;
-    private String descriptionProduct;
+    private String description;
     private String imageProduct;
 
-
-    public String getDescriptionProduct() {
-        return descriptionProduct;
+    public String getIdProduct() {
+        return idProduct;
     }
 
-    public void setDescriptionProduct(String descriptionProduct) {
-        this.descriptionProduct = descriptionProduct;
+    public void setIdProduct(String idProduct) {
+        this.idProduct = idProduct;
     }
 
     public String getIdUser() {
@@ -23,17 +22,6 @@ public class Product {
 
     public void setIdUser(String idUser) {
         this.idUser = idUser;
-    }
-
-
-
-
-    public String getIdProduct() {
-        return idProduct;
-    }
-
-    public void setIdProduct(String idProduct) {
-        this.idProduct = idProduct;
     }
 
     public String getNameProduct() {
@@ -52,12 +40,12 @@ public class Product {
         this.priceProduct = priceProduct;
     }
 
-    public String getInfoProduct() {
-        return descriptionProduct;
+    public String getDescription() {
+        return description;
     }
 
-    public void setInfoProduct(String infoProduct) {
-        this.descriptionProduct = infoProduct;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getImageProduct() {
