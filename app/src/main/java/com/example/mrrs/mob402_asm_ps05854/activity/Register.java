@@ -1,12 +1,15 @@
 package com.example.mrrs.mob402_asm_ps05854.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -27,16 +30,15 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private EditText et_email, et_password, et_name, et_username;
     private TextView tv_login;
     private ProgressBar progress;
+
+    LinearLayout view_container;
     View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        initData();
         initControl();
-        initEvent();
-        initDisplay();
 
 
     }
@@ -47,6 +49,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     private void initControl() {
         view = findViewById(android.R.id.content);
+        view_container = (LinearLayout) findViewById(R.id.view_container);
         btn_register = findViewById(R.id.btn_register);
         tv_login = findViewById(R.id.tv_login);
         et_name = findViewById(R.id.et_name);
@@ -56,6 +59,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         progress = findViewById(R.id.progress);
         btn_register.setOnClickListener(this);
         tv_login.setOnClickListener(this);
+        view_container.setOnClickListener(this);
     }
 
     private void initEvent() {
@@ -70,6 +74,13 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_login: {
+                this.finish();
+                break;
+            }
+            case R.id.view_container:{
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.
+                        INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                 break;
             }
             case R.id.btn_register: {
@@ -79,7 +90,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                 String password = et_password.getText().toString();
 
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-
                     progress.setVisibility(View.VISIBLE);
                     registerProcess(name, email, username, password);
 

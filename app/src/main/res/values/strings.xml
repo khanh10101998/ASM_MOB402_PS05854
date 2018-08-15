@@ -10,7 +10,20 @@
     <string name="doNotHave">Do not have an account ?</string>
     <string name="register"><u>Register</u></string>
     <!--End LOGIN-->
+
+    <!--Forgot password-->
+    <string name="forgot_label">Type Your Email</string>
+
+
+
+    <!--FB-->
     <string name="facebook_app_id">263845017542679</string>
     <string name="fb_login_protocol_scheme">fb263845017542679</string>
+    <string name="forgot_txt_btn_login">Confirm</string>
+    <string name="forgot_have_an_account">You have an account</string>
+    <string name="forgot_u_login">    <u>Login</u></string>
+
+    <!--Register-->
+    <string name="register_txt_login"><u>Login</u></string>
 
 </resources>

@@ -1,21 +1,28 @@
 package com.example.mrrs.mob402_asm_ps05854.activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,7 +58,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
-    TextView tvRegister;
+    TextView tvRegister, txt_forgot_password;
     private Button btn_login;
     private EditText edt_email, edt_password;
     private TextView tv_register;
@@ -61,13 +68,14 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private GoogleApiClient mGoogleApiClient;
     CallbackManager callbackManager;
     private ProgressDialog mProgressDialog;
-//    private ProgressBar progressBar;
+    //    private ProgressBar progressBar;
     private SharedPreferences pref;
     private static final String TAG = "Login";
-
+    LinearLayout view_container;
     private static final int RC_SIGN_IN = 9001;
 
     View view;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,9 +95,11 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     private void initControl() {
 //        progressBar = findViewById(R.id.progress);
         view = findViewById(android.R.id.content);
+
         tvRegister = findViewById(R.id.tv_register);
+        view_container = (LinearLayout) findViewById(R.id.view_container);
         pref = getPreferences(0);
-        btn_login =  findViewById(R.id.btn_login);
+        btn_login = findViewById(R.id.btn_login);
         edt_email = (EditText) findViewById(R.id.edt_username);
         edt_password = (EditText) findViewById(R.id.edt_password);
 //        progressBar = (ProgressBar) findViewById(R.id.progress);
@@ -98,6 +108,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         ivLoginGoogle = findViewById(R.id.iv_login_google);
         ivLoginGoogle.setOnClickListener(this);
         ivLoginFacebook.setOnClickListener(this);
+        view_container.setOnClickListener(this);
     }
 
     private void initEvent() {
@@ -110,7 +121,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_login:
+            case R.id.btn_login: {
                 String email = edt_email.getText().toString();
                 String password = edt_password.getText().toString();
 
@@ -122,15 +133,35 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                     Snackbar.make(view, "Fields are empty !", Snackbar.LENGTH_LONG).show();
                 }
                 break;
-            case R.id.tv_register:
-               INTENT(Register.class);
+            }
+            case R.id.tv_register: {
+//                    Toast.makeText(this,"CLICKED REGISTER", Toast.LENGTH_LONG).show();
+                Intent my_i = new Intent(this, Register.class);
+                startActivity(my_i);
                 break;
-            case R.id.iv_login_facebook:
-                    loginface.performClick();
-                    break;
-            case R.id.iv_login_google:
-                    signInButton.performClick();
-                    break;
+
+            }
+            case R.id.txt_forgotpassword: {
+//                    Toast.makeText(this,"CLICKED REGISTER", Toast.LENGTH_LONG).show();
+                Intent my_i = new Intent(this, ForgotPassword.class);
+                startActivity(my_i);
+                break;
+
+            }
+            case R.id.view_container: {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.
+                        INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                break;
+            }
+            case R.id.iv_login_facebook: {
+                loginface.performClick();
+                break;
+            }
+            case R.id.iv_login_google: {
+                signInButton.performClick();
+                break;
+            }
 
         }
     }
@@ -161,7 +192,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                     editor.putString(Constants.EMAIL, resp.getUser().getEmail());
                     editor.putString(Constants.NAME, resp.getUser().getName());
                     editor.putString(Constants.UNIQUE_ID, resp.getUser().getUnique_id());
-                    Log.d("LOGIN","email :"+resp.getUser().getEmail() + " name: "+resp.getUser().getName());
+                    Log.d("LOGIN", "email :" + resp.getUser().getEmail() + " name: " + resp.getUser().getName());
                     editor.apply();
                     INTENT(MainActivity.class);
                     Toast.makeText(Login.this, "Login succes", Toast.LENGTH_SHORT).show();
@@ -196,6 +227,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         }
         callbackManager = CallbackManager.Factory.create();
         loginface.setReadPermissions("email");
+
         loginface.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -234,8 +266,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         signInButton.setScopes(gso.getScopeArray());
     }
 
-    @Override
-    public void onStart() {
+    public void checkServiceGoogle() {
         super.onStart();
 
         OptionalPendingResult<GoogleSignInResult> opr = Auth.GoogleSignInApi.silentSignIn(mGoogleApiClient);
@@ -283,6 +314,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
             Toast.makeText(this, "Dang nhap that bai", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void revokeAccess() {
         Auth.GoogleSignInApi.revokeAccess(mGoogleApiClient).setResultCallback(
                 new ResultCallback<Status>() {
@@ -312,6 +344,49 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         }
 
         mProgressDialog.show();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            AlertDialog.Builder builder;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(this);
+            }
+            builder.setTitle("Warning")
+                    .setMessage("Are you sure you want to exit app?")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // continue with exit app
+                            moveTaskToBack(true);
+                            android.os.Process.killProcess(android.os.Process.myPid());
+                            System.exit(1);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // do nothing
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+            return true;
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+
     }
 
     private void hideProgressDialog() {
