@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     TextView tvRegister, txt_forgot_password;
     private Button btn_login;
     private EditText edt_email, edt_password;
-    private TextView tv_register;
+    private TextView tv_register, txt_forgotpassword;
     LoginButton loginface;
     ImageView ivLoginFacebook, ivLoginGoogle;
     SignInButton signInButton;
@@ -102,6 +102,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         btn_login = findViewById(R.id.btn_login);
         edt_email = (EditText) findViewById(R.id.edt_username);
         edt_password = (EditText) findViewById(R.id.edt_password);
+        txt_forgotpassword =  findViewById(R.id.txt_forgotpassword);
 //        progressBar = (ProgressBar) findViewById(R.id.progress);
         btn_login.setOnClickListener(this);
         ivLoginFacebook = findViewById(R.id.iv_login_facebook);
@@ -109,6 +110,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
         ivLoginGoogle.setOnClickListener(this);
         ivLoginFacebook.setOnClickListener(this);
         view_container.setOnClickListener(this);
+        txt_forgotpassword.setOnClickListener(this);
     }
 
     private void initEvent() {
@@ -141,13 +143,13 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                 break;
 
             }
-            case R.id.txt_forgotpassword: {
-//                    Toast.makeText(this,"CLICKED REGISTER", Toast.LENGTH_LONG).show();
-                Intent my_i = new Intent(this, ForgotPassword.class);
-                startActivity(my_i);
-                break;
-
-            }
+//            case R.id.txt_forgotpassword: {
+////                    Toast.makeText(this,"CLICKED REGISTER", Toast.LENGTH_LONG).show();
+//                Intent my_i = new Intent(this, ForgotPassword.class);
+//                startActivity(my_i);
+//                break;
+//
+//            }
             case R.id.view_container: {
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.
                         INPUT_METHOD_SERVICE);
@@ -160,6 +162,10 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
             }
             case R.id.iv_login_google: {
                 signInButton.performClick();
+                break;
+            }
+            case R.id.txt_forgotpassword: {
+                INTENT(ForgotPassword.class);
                 break;
             }
 

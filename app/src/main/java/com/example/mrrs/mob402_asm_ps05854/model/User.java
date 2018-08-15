@@ -4,6 +4,10 @@ public class User {
     private String name;
     private String email;
     private String unique_id;
+    private String password;
+    private String old_password;
+    private String new_password;
+    private String code;
 
     public String getUsername() {
         return username;
@@ -14,9 +18,14 @@ public class User {
     }
 
     private String username;
-    private String password;
-    private String old_password;
-    private String new_password;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 
     public String getName() {
         return name;

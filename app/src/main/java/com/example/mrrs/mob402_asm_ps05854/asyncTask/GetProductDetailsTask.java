@@ -63,8 +63,8 @@ public class GetProductDetailsTask extends AsyncTask<String, String ,
                 product = new Product();
                 product.setNameProduct(obj.getString(Constants.TAG_NAME));
                 product.setPriceProduct(obj.getString(Constants.TAG_PRICE));
-
-                product.setDescriptionProduct(obj.getString(Constants.TAG_DESCRIPTION));
+                product.setDescription(obj.getString(Constants.TAG_DESCRIPTION));
+                product.setImageProduct(obj.getString(Constants.TAG_image));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class GetProductDetailsTask extends AsyncTask<String, String ,
         }
         edtName.setText(product.getNameProduct());
         edtPrice.setText(product.getPriceProduct());
-        edtDes.setText(product.getDescriptionProduct());
+        edtDes.setText(product.getDescription());
     }
 }
 
