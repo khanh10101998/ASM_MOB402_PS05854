@@ -16,15 +16,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GetProductDetailsTask extends AsyncTask<String, String ,
+public class GetUserProductDetailsTask extends AsyncTask<String, String ,
         String> {
     Context context;
     ProgressDialog pDialog;
     JSONParser jsonParser;
     EditText edtName, edtPrice, edtDes;
     Product product;
-    public GetProductDetailsTask(Context context, EditText edtName,
-                                 EditText edtPrice, EditText edtDes){
+    public GetUserProductDetailsTask(Context context, EditText edtName,
+                                     EditText edtPrice, EditText edtDes){
         this.context = context;
         this.edtName = edtName;
         this.edtPrice = edtPrice;

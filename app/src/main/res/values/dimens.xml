@@ -17,4 +17,5 @@
     <dimen name="forgot_size_label">20sp</dimen>
     <dimen name="forgot_width_edt">300dp</dimen>
     <dimen name="forgot_height_edt">50dp</dimen>
+<!--cart-->
 </resources>

@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by Han on 29/12/2016.
 // */
-public class LoadAllProductsTask extends AsyncTask<String, String, String> {
+public class LoadAllUserProductsTask extends AsyncTask<String, String, String> {
     Context context;
     ListView lvProducts;
     ProgressDialog pDialog;
@@ -34,7 +34,7 @@ public class LoadAllProductsTask extends AsyncTask<String, String, String> {
     ArrayList<Product> listProducts;
     JSONArray products = null;
     AdapterProduct adapterProduct;
-    public LoadAllProductsTask(Context context, ListView lvProducts) {
+    public LoadAllUserProductsTask(Context context, ListView lvProducts) {
         this.context = context;
         this.lvProducts = lvProducts;
         jParser = new JSONParser();
@@ -53,7 +53,7 @@ public class LoadAllProductsTask extends AsyncTask<String, String, String> {
         // Building Parameters
         List<HashMap<String, String>> params = new ArrayList<>();
         JSONObject jsonObject =
-                jParser.makeHttpRequest(Constants.url_all_products, "GET", params);
+                jParser.makeHttpRequest(Constants.url_user_products, "GET", params);
         try {
             int success = jsonObject.getInt("success");
             Log.d("All Products: ","sucess: "+ success);
@@ -66,15 +66,15 @@ public class LoadAllProductsTask extends AsyncTask<String, String, String> {
                     String pid = c.getString(Constants.TAG_PID);
                     String name = c.getString(Constants.TAG_NAME);
                     String price = c.getString(Constants.TAG_PRICE);
-                    String description = c.getString(Constants.TAG_DESCRIPTION);
+                    String image = c.getString(Constants.TAG_image);
                     // creating new Product
 
-                    Log.d("All Products: ", "ID Product: "+pid +"| name: "+name+"| price: "+price+"| description: "+description);
+                    Log.d("All Products: ", "ID Product: "+pid +"| name: "+name+"| price: "+price+"| image: "+image);
                     Product product = new Product();
                     product.setIdProduct(pid);
                     product.setNameProduct(name);
                     product.setPriceProduct(price);
-                    product.setDescription(description);
+                    product.setImageProduct(image);
                     listProducts.add(product);
                 }
             } else {

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:background="#f43c3c"
+            android:id="@+id/item_cart_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/item_cart_time"
+            android:textColor="#ffffff"
+            android:text="End: 10 hours 20 minutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--https://www.google.com.vn/search?biw=1366&bih=700&tbm=isch&sa=1&ei=8j90W8zFFtGw9QPRzL6QCg&q=mercedes+png&oq=mercedes+png&gs_l=img.3..0l3j0i5i30k1l7.5722.6468.0.6732.4.4.0.0.0.0.162.457.0j3.3.0....0...1c.1.64.img..1.3.456...0i67k1.0.u-Z7bGIoU1g#imgrc=krEZMVauUZiNtM:-->
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_weight="7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/item_cart_name"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="#ffffff"
+                    android:text="Mercedes S63 AMG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/item_cart_price"
+                    android:layout_marginTop="5dp"
+                    android:textColor="#ffffff"
+                    android:text="15.000.000.000 VND"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:text="Model: 2019"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
