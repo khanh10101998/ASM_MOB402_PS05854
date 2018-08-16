@@ -9,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.example.mrrs.mob402_asm_ps05854.R;
+import com.example.mrrs.mob402_asm_ps05854.asyncTask.LoadAllProductsTask;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+    LoadAllProductsTask loadAllProductsTask;
     ViewFlipper ViewFlipper_home;
     ImageView img1_home,img2_home,img3_home;
     Animation in,out;
@@ -18,10 +20,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        initData();
         initControll();
         initDisplay();
 
+    }
+
+    private void initData() {
+        loadAllProductsTask = new LoadAllProductsTask(this);
+        loadAllProductsTask.execute();
     }
 
     private void initDisplay() {
