@@ -65,7 +65,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:layout_marginTop="5dp"
+
+                        android:layout_marginTop="10dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginLeft="30dp"
                         android:scaleType="fitXY"
@@ -98,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:layout_marginBottom="140dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/av3"
                 android:layout_width="match_parent"

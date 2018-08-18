@@ -1,5 +1,6 @@
 package com.example.mrrs.mob402_asm_ps05854.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,13 +23,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
         initData();
         initControll();
+        initEvent();
         initDisplay();
 
     }
 
+
+
     private void initData() {
         loadAllProductsTask = new LoadAllProductsTask(this);
         loadAllProductsTask.execute();
+    }
+
+    private void initEvent() {
+        img1_home.setOnClickListener(this);
+        img2_home.setOnClickListener(this);
+        img3_home.setOnClickListener(this);
     }
 
     private void initDisplay() {
@@ -52,9 +62,27 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         img3_home = findViewById(R.id.img3_home);
     }
 
+
+
+    public void INTENT(Class c){
+        Intent intent = new Intent(HomeActivity.this, c);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View v) {
         ViewFlipper_home.startFlipping();
         ViewFlipper_home.setFlipInterval(3000);
+        switch (v.getId()){
+            case R.id.img1_home:
+                INTENT(CartActivity.class);
+                break;
+            case R.id.img2_home:
+                INTENT(CartActivity.class);
+                break;
+            case R.id.img3_home:
+                INTENT(CartActivity.class);
+                break;
+        }
     }
 }
