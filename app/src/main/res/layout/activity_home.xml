@@ -29,6 +29,9 @@
     <LinearLayout
         android:weightSum="3"
         android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -45,8 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <LinearLayout
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -57,22 +59,19 @@
                         android:layout_height="match_parent" />
                 </LinearLayout>
                 <LinearLayout
-
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
                         android:id="@+id/iv_mercedes_E300"
                         android:layout_marginTop="10dp"
-                        android:layout_marginRight="30dp"
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="10dp"
                         android:scaleType="centerCrop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
-
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -98,5 +97,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/iv_mercedes_S500"-->
+                <!--android:layout_marginBottom="140dp"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/mercedes_s500"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+        <!--</LinearLayout>-->
     </LinearLayout>
 </LinearLayout>

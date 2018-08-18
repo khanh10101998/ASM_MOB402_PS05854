@@ -69,6 +69,7 @@ public class AdapterProduct extends BaseAdapter {
         viewHolder.tvPrice.setText(product.getPriceProduct());
         Picasso.with(context).load(product.getImageProduct())
                 .placeholder(R.drawable.ic_place_holder)
+                .resize(250,100)
                 .error(R.drawable.ic_error)
                 .into(viewHolder.ivCart);
         return view;

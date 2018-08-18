@@ -41,6 +41,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         img1_home.setOnClickListener(this);
         img2_home.setOnClickListener(this);
         img3_home.setOnClickListener(this);
+
+        iv_mercedes_g65.setOnClickListener(this);
+        iv_mercedes_E300.setOnClickListener(this);
+        iv_mercedes_S500.setOnClickListener(this);
+        iv_mercedes_gt3.setOnClickListener(this);
+
+
     }
 
     private void initDisplay() {
@@ -59,7 +66,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void LoadImage(String url, ImageView imageView) {
         Picasso.with(this).load(url)
-                .resize(600,300)
+                .resize(90,40)
+//                .onlyScaleDown().fit()
                 .placeholder(R.drawable.ic_place_holder)
                 .error(R.drawable.ic_error)
                 .into(imageView);
@@ -113,14 +121,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 INTENT(CartActivity.class);
                 break;
             case R.id.iv_mercedes_g65:
-                AddToCart("1","Mercedes G65","15.000.000 vnd"," xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
+//                AddToCart("1","Mercedes G65","15.000.000 vnd"," xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
                 INTENT(CartActivity.class);
                 break;
             case R.id.iv_mercedes_E300:
-                AddToCart("1","Mercedes E300","3.000.000 vnd",      " xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
+//                AddToCart("1","Mercedes E300","3.000.000 vnd",      " xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
                 INTENT(CartActivity.class);
                 break;
             case R.id.iv_mercedes_S500:
+//                AddToCart("1","Mercedes E300","3.000.000 vnd",      " xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
                 INTENT(CartActivity.class);
                 break;
 
