@@ -1,7 +1,9 @@
 package com.example.mrrs.mob402_asm_ps05854.asyncTask;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -32,6 +34,7 @@ public class LoadAllUserProductsTask extends AsyncTask<String, String, String> {
     ProgressDialog pDialog;
     JSONParser jParser;
     ArrayList<Product> listProducts;
+    DeleteProductTask deleteProductTask;
     JSONArray products = null;
     AdapterProduct adapterProduct;
     public LoadAllUserProductsTask(Context context, ListView lvProducts) {
@@ -103,6 +106,10 @@ public class LoadAllUserProductsTask extends AsyncTask<String, String, String> {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(context, "lick item: " + i, Toast.LENGTH_SHORT).show();
 
+                DeleteProduct(listProducts.get(i).getIdProduct());
+
+
+
                 // Edit product here
 //                String pid = listProducts.get(i).getId();
 //                Intent intent = new Intent(context, EditProductActivity.class);
@@ -110,6 +117,31 @@ public class LoadAllUserProductsTask extends AsyncTask<String, String, String> {
 //                ((Activity) context).startActivityForResult(intent, 100);
                 }
         });
+    }
+
+    private void DeleteProduct(final String productId) {
+        deleteProductTask = new DeleteProductTask(context);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Deleting product...");
+        builder.setMessage("Are you sure you want delete this product?");
+        builder.setNegativeButton("Yes", new
+                DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        deleteProductTask.execute(productId);
+                        dialogInterface.dismiss();
+                    }
+                });
+        builder.setPositiveButton("No", new
+                DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        dialogInterface.dismiss();
+                    }
+                });
+        builder.show();
     }
 }
 

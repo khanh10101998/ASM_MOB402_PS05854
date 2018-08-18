@@ -8,6 +8,18 @@ public class Product {
     private String description;
     private String imageProduct;
 
+    public Product() {
+    }
+
+    public Product(String idProduct, String idUser, String nameProduct, String priceProduct, String description, String imageProduct) {
+        this.idProduct = idProduct;
+        this.idUser = idUser;
+        this.nameProduct = nameProduct;
+        this.priceProduct = priceProduct;
+        this.description = description;
+        this.imageProduct = imageProduct;
+    }
+
     public String getIdProduct() {
         return idProduct;
     }
