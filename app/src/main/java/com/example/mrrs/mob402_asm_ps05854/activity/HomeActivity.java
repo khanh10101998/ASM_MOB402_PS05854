@@ -12,6 +12,7 @@ import android.widget.ViewFlipper;
 import com.example.mrrs.mob402_asm_ps05854.R;
 import com.example.mrrs.mob402_asm_ps05854.asyncTask.CreateNewProductTask;
 import com.example.mrrs.mob402_asm_ps05854.asyncTask.LoadAllProductsTask;
+import com.squareup.picasso.Picasso;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     LoadAllProductsTask loadAllProductsTask;
@@ -30,8 +31,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
-
     private void initData() {
         loadAllProductsTask = new LoadAllProductsTask(this);
         loadAllProductsTask.execute();
@@ -45,6 +44,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initDisplay() {
         displayViewFipper();
+        LoadImage("https://images.hgmsites.net/hug/2017-volvo-s90_100579091_h.jpg", img1_home);
+        LoadImage("https://di-uploads-pod6.s3.amazonaws.com/landroverwestchester/uploads/2016/08/2017-Land-Rover-Evoque-SE.jpg", img2_home);
+        LoadImage("https://lc-cdn.sixt.io/Images/Cars/BMW/USA_BMW_7er_L/Content_Box/half-660x330/A0197012.jpg", img3_home);
+    }
+
+    private void LoadImage(String url, ImageView imageView) {
+        Picasso.with(this).load(url)
+                .placeholder(R.drawable.ic_place_holder)
+                .error(R.drawable.ic_error)
+                .into(imageView);
     }
 
     private void displayViewFipper() {

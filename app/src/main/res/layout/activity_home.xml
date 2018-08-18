@@ -11,21 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="150dp">
         <ImageView
-            android:scaleType="centerCrop"
             android:id="@+id/img1_home"
-            android:src="@drawable/volvo_s90"
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <ImageView
-            android:scaleType="centerCrop"
             android:id="@+id/img2_home"
-            android:src="@drawable/land_rover_evoque"
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <ImageView
-            android:scaleType="centerCrop"
             android:id="@+id/img3_home"
-            android:src="@drawable/bmw7"
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </ViewFlipper>
@@ -56,7 +53,6 @@
                     <ImageView
                         android:id="@+id/iv_mercedes_g65"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/mercedes_g65"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
@@ -71,7 +67,6 @@
                         android:layout_marginRight="30dp"
                         android:layout_marginLeft="30dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/mercedes_e300"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
@@ -83,7 +78,6 @@
                 android:layout_height="match_parent">
                 <ImageView
                     android:scaleType="centerCrop"
-                    android:src="@drawable/mercedes_gt3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
@@ -100,7 +94,6 @@
                 android:id="@+id/iv_mercedes_S500"
                 android:layout_marginBottom="140dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/mercedes_s500"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>
