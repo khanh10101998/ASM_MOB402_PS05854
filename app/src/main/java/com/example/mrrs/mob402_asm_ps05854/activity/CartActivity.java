@@ -18,7 +18,7 @@ import com.example.mrrs.mob402_asm_ps05854.asyncTask.LoadAllUserProductsTask;
 import com.example.mrrs.mob402_asm_ps05854.asyncTask.SaveProductDetailsTask;
 
 public class CartActivity extends AppCompatActivity implements View.OnClickListener {
-CreateNewProductTask newProductTask;
+    CreateNewProductTask newProductTask;
     SaveProductDetailsTask saveProductDetailsTask;
     DeleteProductTask deleteProductTask;
     GetUserProductDetailsTask productDetailsTask;

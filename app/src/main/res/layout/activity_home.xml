@@ -11,21 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="150dp">
         <ImageView
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:id="@+id/img1_home"
-            android:src="@drawable/h1"
+            android:src="@drawable/volvo_s90"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <ImageView
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:id="@+id/img2_home"
-            android:src="@drawable/h2"
+            android:src="@drawable/land_rover_evoque"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <ImageView
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:id="@+id/img3_home"
-            android:src="@drawable/h3"
+            android:src="@drawable/bmw7"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </ViewFlipper>
@@ -54,8 +54,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
-                        android:scaleType="fitXY"
-                        android:src="@drawable/av1"
+                        android:id="@+id/iv_mercedes_g65"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mercedes_g65"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
@@ -65,27 +66,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
                     <ImageView
-
+                        android:id="@+id/iv_mercedes_E300"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="30dp"
                         android:layout_marginLeft="30dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/av2"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/mercedes_e300"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
+
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:layout_marginTop="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="30dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/av4"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/mercedes_gt3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
@@ -99,9 +97,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
+                android:id="@+id/iv_mercedes_S500"
                 android:layout_marginBottom="140dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/av3"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mercedes_s500"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
         </LinearLayout>

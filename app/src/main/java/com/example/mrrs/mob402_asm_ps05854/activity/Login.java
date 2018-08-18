@@ -198,7 +198,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                     editor.putString(Constants.EMAIL, resp.getUser().getEmail());
                     editor.putString(Constants.NAME, resp.getUser().getName());
                     editor.putString(Constants.UNIQUE_ID, resp.getUser().getUnique_id());
-                    Log.d("LOGIN", "email :" + resp.getUser().getEmail() + " name: " + resp.getUser().getName());
+                    Log.d("LOGIN", "Id user: "+ resp.getUser().getUnique_id() +"email :" + resp.getUser().getEmail() + " name: " + resp.getUser().getName());
                     editor.apply();
                     INTENT(MainActivity.class);
                     Toast.makeText(Login.this, "Login succes", Toast.LENGTH_SHORT).show();

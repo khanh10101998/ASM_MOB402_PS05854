@@ -10,10 +10,12 @@ import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
 import com.example.mrrs.mob402_asm_ps05854.R;
+import com.example.mrrs.mob402_asm_ps05854.asyncTask.CreateNewProductTask;
 import com.example.mrrs.mob402_asm_ps05854.asyncTask.LoadAllProductsTask;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     LoadAllProductsTask loadAllProductsTask;
+    CreateNewProductTask newProductTask;
     ViewFlipper ViewFlipper_home;
     ImageView img1_home,img2_home,img3_home;
     Animation in,out;
@@ -69,12 +71,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    private void AddToCart(String userId, String name, String price, String description, String urlImage) {
+        newProductTask = new CreateNewProductTask(this);
+        newProductTask.execute(userId,name,price, description, urlImage);
+    }
+
     @Override
     public void onClick(View v) {
         ViewFlipper_home.startFlipping();
         ViewFlipper_home.setFlipInterval(3000);
         switch (v.getId()){
             case R.id.img1_home:
+
                 INTENT(CartActivity.class);
                 break;
             case R.id.img2_home:
