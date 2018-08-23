@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void LoadImage(String url, ImageView imageView) {
         Picasso.with(this).load(url)
-                .resize(90,40)
+                .resize(150,80)
 //                .onlyScaleDown().fit()
                 .placeholder(R.drawable.ic_place_holder)
                 .error(R.drawable.ic_error)
@@ -121,15 +121,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 INTENT(CartActivity.class);
                 break;
             case R.id.iv_mercedes_g65:
-//                AddToCart("1","Mercedes G65","15.000.000 vnd"," xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
+                AddToCart("1","Mercedes G65","15.000.000 vnd"," xe mercedes G65","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
                 INTENT(CartActivity.class);
                 break;
             case R.id.iv_mercedes_E300:
-//                AddToCart("1","Mercedes E300","3.000.000 vnd",      " xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
+                AddToCart("1","Mercedes E300","3.000.000 vnd",      " xe mercedes E300","http://media.caranddriver.com/images/16q2/667349/2017-mercedes-benz-e300-4matic-first-drive-review-car-and-driver-photo-669046-s-original.jpg");
                 INTENT(CartActivity.class);
                 break;
             case R.id.iv_mercedes_S500:
-//                AddToCart("1","Mercedes E300","3.000.000 vnd",      " xe mercedes","http://image.trucktrend.com/f/48796851+w+h+q80+re0+cr1/2013-mercedes-benz-g65-amg-front.jpg");
+                AddToCart("1","Mercedes S500","3.000.000 vnd",      " xe mercedes S500","http://mercedesbenzvietnam.com/wp-content/uploads/maybach-s500.jpg");
                 INTENT(CartActivity.class);
                 break;
 

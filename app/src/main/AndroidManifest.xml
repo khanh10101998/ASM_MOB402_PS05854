@@ -24,6 +24,11 @@
         <activity android:name=".activity.Register" />
         <activity android:name=".activity.ForgotPassword" />
         <activity android:name=".activity.Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
 
         </activity>
@@ -49,11 +54,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.CartActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
     </application>

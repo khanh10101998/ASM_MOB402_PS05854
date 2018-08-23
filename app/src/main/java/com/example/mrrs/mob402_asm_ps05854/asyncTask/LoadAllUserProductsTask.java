@@ -104,8 +104,8 @@ public class LoadAllUserProductsTask extends AsyncTask<String, String, String> {
         lvProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(context, "lick item: " + i, Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(context, "lick item: " + listProducts.get(i).getIdProduct(), Toast.LENGTH_SHORT).show();
+                Log.d("All Products", "id product" +  listProducts.get(i).getIdProduct());
                 DeleteProduct(listProducts.get(i).getIdProduct());
 
 
